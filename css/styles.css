@@ -64,7 +64,13 @@ a:hover {
 }
 
 #menu {
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+    width: 100;
     clear: both;
     background: #222;
     color: white;
@@ -74,13 +80,14 @@ a:hover {
 
 
 #menu ul {
+    display: flex;
     list-style: none;
-    text-decoration: none;
     margin: 0px auto;
     margin-left: 25px;
 }
 
 #menu ul li {
+    
     line-height: 55px;
     float: left;
     border-right: 1px solid #363636;
@@ -117,7 +124,7 @@ a:hover {
 
 h3 {
     padding-top: 20px;
-    font-family: "JetBrains Mono" , monospace;
+    font-family: "JetBrains Mono", monospace;
     font-style: normal;
     font-weight: 800;
 }
@@ -188,4 +195,13 @@ h3 {
     background: #363636;
     border-top: 4px solid #01b1ea;
 
+}
+
+.video {
+    text-align: center;
+
+}
+
+iframe {
+    max-width: 100%;
 }
