@@ -1,7 +1,7 @@
 #header {
 
     height: 145px;
-    background: #363636;
+    background: #363636
 }
 
 #logo {
@@ -55,7 +55,7 @@ a:hover {
     color: #555555;
 }
 
-#container {
+.container {
 
     width: 80%;
     margin: 0px auto;
