@@ -1,6 +1,12 @@
 body {
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    
+
     background: url(../img/bg.png);
     font-family: "Open Sans"
+    
 }
 
 a:hover {
@@ -13,4 +19,9 @@ a:visited {
 
 a {
     color: #01b1ea;
+}
+
+.video {
+    text-align: center;
+
 }
