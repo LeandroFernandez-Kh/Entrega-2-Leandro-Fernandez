@@ -1,23 +1,74 @@
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @mixin button-style($bg-color, $text-color: #fff) {
-    display: inline-block;
-    padding: $button-padding;
-    text-align: center;
-    text-decoration: none;
-    border-radius: $border-radius;
-    font-weight: bold;
-    background-color: $bg-color;
-    color: $text-color;
-    transition: background-color $transition-duration ease;
-    cursor: pointer;
-  
-    &:hover {
-      background-color: lighten($bg-color, 10%);
-    }
+  display: inline-block;
+  padding: $button-padding;
+  text-align: center;
+  text-decoration: none;
+  border-radius: $border-radius;
+  font-weight: bold;
+  background-color: $bg-color;
+  color: $text-color;
+  transition: background-color $transition-duration ease, transform $transition-duration ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    background-color: lighten($bg-color, 10%);
+    transform: scale(1.05)
   }
-  
-  @mixin card-style($bg-color: #fff) {
-    background-color: $bg-color;
-    border-radius: $border-radius;
-    box-shadow: $box-shadow;
-    overflow: hidden;
+
+  &:before {
+    transform: translate(-50%, -50%) scale(1);
   }
+
+  &:active {
+    background-color: darken($bg-color, 10%);
+
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.6s ease;
+  }
+
+}
+
+
+
+@mixin card-style($bg-color: #fff) {
+  background-color: $bg-color;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  overflow: hidden;
+}
